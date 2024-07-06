@@ -12,3 +12,18 @@ C:\Users\sedus\OneDrive\Рабочий стол\домашка\Final Task\Final 
 C:\Users\sedus\OneDrive\Рабочий стол\домашка\Final Task\Final Task\obj\Debug\net6.0\Final Task.pdb
 C:\Users\sedus\OneDrive\Рабочий стол\домашка\Final Task\Final Task\obj\Debug\net6.0\Final Task.genruntimeconfig.cache
 C:\Users\sedus\OneDrive\Рабочий стол\домашка\Final Task\Final Task\obj\Debug\net6.0\ref\Final Task.dll
+C:\Users\sedus\OneDrive\Рабочий стол\домашка\Final_Task\Final Task\bin\Debug\net6.0\Final Task.exe
+C:\Users\sedus\OneDrive\Рабочий стол\домашка\Final_Task\Final Task\bin\Debug\net6.0\Final Task.deps.json
+C:\Users\sedus\OneDrive\Рабочий стол\домашка\Final_Task\Final Task\bin\Debug\net6.0\Final Task.runtimeconfig.json
+C:\Users\sedus\OneDrive\Рабочий стол\домашка\Final_Task\Final Task\bin\Debug\net6.0\Final Task.dll
+C:\Users\sedus\OneDrive\Рабочий стол\домашка\Final_Task\Final Task\bin\Debug\net6.0\Final Task.pdb
+C:\Users\sedus\OneDrive\Рабочий стол\домашка\Final_Task\Final Task\obj\Debug\net6.0\Final Task.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sedus\OneDrive\Рабочий стол\домашка\Final_Task\Final Task\obj\Debug\net6.0\Final Task.AssemblyInfoInputs.cache
+C:\Users\sedus\OneDrive\Рабочий стол\домашка\Final_Task\Final Task\obj\Debug\net6.0\Final Task.AssemblyInfo.cs
+C:\Users\sedus\OneDrive\Рабочий стол\домашка\Final_Task\Final Task\obj\Debug\net6.0\Final Task.csproj.CoreCompileInputs.cache
+C:\Users\sedus\OneDrive\Рабочий стол\домашка\Final_Task\Final Task\obj\Debug\net6.0\Final Task.sourcelink.json
+C:\Users\sedus\OneDrive\Рабочий стол\домашка\Final_Task\Final Task\obj\Debug\net6.0\Final Task.dll
+C:\Users\sedus\OneDrive\Рабочий стол\домашка\Final_Task\Final Task\obj\Debug\net6.0\refint\Final Task.dll
+C:\Users\sedus\OneDrive\Рабочий стол\домашка\Final_Task\Final Task\obj\Debug\net6.0\Final Task.pdb
+C:\Users\sedus\OneDrive\Рабочий стол\домашка\Final_Task\Final Task\obj\Debug\net6.0\Final Task.genruntimeconfig.cache
+C:\Users\sedus\OneDrive\Рабочий стол\домашка\Final_Task\Final Task\obj\Debug\net6.0\ref\Final Task.dll

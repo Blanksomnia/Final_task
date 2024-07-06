@@ -12,6 +12,7 @@ namespace Final_Task
 {
     internal class BlackJack : CasinoGameBase
     {
+
         private static readonly Random _random = new Random();
         private List<string> Deck = new List<string>();
         private List<string> CardValues = new List<string> { "6", "7", "8", "9", "10", "Jack", "Queen", "Knight", "Ace" };
@@ -98,9 +99,14 @@ namespace Final_Task
         {
             return _random.Next(36);
         }
-        public void inGame()
+        public void inGame(string path)
         {
-            var object1 = new Profile();
+            int bat = new Exception().exeption();
+            if ( bat == 0)
+            {
+                bat = new Exception().exeption();
+            }
+            var readStream = File.ReadLines(path).ElementAtOrDefault(0);
             Card();
             Shuffle();
             _list1.Add(Deck[1]);
@@ -111,7 +117,7 @@ namespace Final_Task
             Deck.Remove(Deck[1]);
             _list2.Add(Deck[1]);
             Deck.Remove(Deck[1]);
-            Console.WriteLine("подбор карт - ");
+            Console.WriteLine("card selection - ");
             for (int i = 0; i < _list1.Count; i++)
             {
                 Console.WriteLine(_list1[i]);
@@ -124,7 +130,7 @@ namespace Final_Task
             }
             if (result1player == result2player || result1player < 21 && result2player < 21)
             {
-                Console.WriteLine("подбор карт - ");
+                Console.WriteLine("card selection - ");
                 _list1.Add(Deck[1]);
                 Deck.Remove(Deck[1]);
                 _list2.Add(Deck[1]);
@@ -141,10 +147,10 @@ namespace Final_Task
                 Console.WriteLine(_list1.Last());
                 Console.WriteLine(_list2.Last());
             }
-            Console.WriteLine($"результат 1 игрока - {result1player}");
-            Console.WriteLine($"результат 2 игрока - {result2player}");
-            PlayGameBlackJack(result1player, result2player);
-            new IGame().StartGame();
+            Console.WriteLine($"result {readStream} - {result1player}");
+            Console.WriteLine($"result 2 player - {result2player}");
+            PlayGameBlackJack(result1player, result2player, path, bat);
+
 
         }
     }

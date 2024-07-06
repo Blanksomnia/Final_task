@@ -1,70 +1,74 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Final_Task
 {
     public abstract class CasinoGameBase
     {
-        public void PlayGameBone(int point1, int point2)
+        public string _path = new FileSystemSaveLoadService().path;
+        public void PlayDiceGame(int point1, int point2, string path, int bet)
         {
-            if (point1 < point2)
+            _path = path;
+            if (point2 > point1)
             {
-                WiOnLooseInvoke();
+                WiOnLooseInvoke(Convert.ToInt32(File.ReadLines(_path).ElementAtOrDefault(1)), bet);
             }
-            if (point2 < point1)
+            if (point1 > point2)
             {
-                WiOnWinInvoke();
+                WiOnWinInvoke(Convert.ToInt32(File.ReadLines(_path).ElementAtOrDefault(1)), bet);
             }
             else if (point1 == point2)
             {
-                WiOnDrawInvoke();
+                WiOnDrawInvoke(Convert.ToInt32(File.ReadLines(_path).ElementAtOrDefault(1)), bet);
             }
         }
-        public void PlayGameBlackJack(int point1, int point2)
+        public void PlayGameBlackJack(int point1, int point2, string path, int bet)
         {
-            if (point1 < 21 && point2 >= 21 || point1 < point2)
+            _path = path;
+            if (point1 < 21 && point2 >= 21 || point1 > point2 && point2 < 21 && point1 < 21)
             {
-                WiOnWinInvoke();
+                WiOnWinInvoke(Convert.ToInt32(File.ReadLines(_path).ElementAtOrDefault(1)), bet);
             }
-            if (point2 < 21 && point1 >= 21 || point2 < point1)
+            if (point2 < 21 && point1 >= 21 || point2 > point1 && point1 < 21 && point2 < 21)
             {
-                WiOnLooseInvoke();
+                WiOnLooseInvoke(Convert.ToInt32(File.ReadLines(_path).ElementAtOrDefault(1)), bet);
             }
-            else if (point1 == point2 || point1 >= 21 && point2 >= 21)
+            else if (point1 == point2)
             {
-                WiOnDrawInvoke();
+                WiOnDrawInvoke(Convert.ToInt32(File.ReadLines(_path).ElementAtOrDefault(1)), bet);
             }
         }
-        private static void WiOnWinInvoke()
+        private void WiOnWinInvoke(int _point, int bet)
         {
-            var object1 = new Profile();
-            var object2 = new FileSystemSaveLoadService();
-            Console.WriteLine("YOU WIN!");
-            object1.Point = object1.Point + 10;
-            Console.WriteLine($"youre Points {object1.Point}");
-            object2.choose();
+            Console.WriteLine("You win!");
+            var point = _point;
+            _point = _point + bet;
+            Console.WriteLine($"youre points {point} + {bet} = {_point}");
+            new FileSystemSaveLoadService()._SaveData(File.ReadLines(_path).ElementAtOrDefault(0), _point);
         }
-        private static void WiOnLooseInvoke()
+        private void WiOnLooseInvoke(int _point, int bet)
         {
-            var object1 = new Profile();
-            var object2 = new FileSystemSaveLoadService();
-            Console.WriteLine("YOU LOSE!");
-            object1.Point = object1.Point - 10;
-            Console.WriteLine($"youre Points {object1.Point}");
-            object2.choose();
+            Console.WriteLine("You loose!");
+            var point = _point;
+            _point = _point - bet;
+            Console.WriteLine($"youre points {point} - {bet} = {_point}");
+            new FileSystemSaveLoadService()._SaveData(File.ReadLines(_path).ElementAtOrDefault(0), _point);
         }
-        private static void WiOnDrawInvoke()
+        private void WiOnDrawInvoke(int _point, int bet)
         {
-            var object1 = new Profile();
-            var object2 = new FileSystemSaveLoadService();
-            Console.WriteLine("NO WINER");
-            object1.Point = object1.Point - 5;
-            Console.WriteLine($"youre Points {object1.Point}");
-            object2.choose();
+            Console.WriteLine("Draw!");
+            var point = _point;
+            bet = bet / 2;
+            _point = _point - bet;
+            Console.WriteLine($"youre points {point} - {bet} = {_point}");
+            new FileSystemSaveLoadService()._SaveData(File.ReadLines(_path).ElementAtOrDefault(0), _point);
         }
 
     }
