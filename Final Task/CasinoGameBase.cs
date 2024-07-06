@@ -32,11 +32,11 @@ namespace Final_Task
         public void PlayGameBlackJack(int point1, int point2, string path, int bet)
         {
             _path = path;
-            if (point1 < 21 && point2 >= 21 || point1 > point2 && point2 < 21 && point1 < 21)
+            if (point1 < 21 && point2 > 21 || point1 < point2 && point1 != 21)
             {
                 WiOnWinInvoke(Convert.ToInt32(File.ReadLines(_path).ElementAtOrDefault(1)), bet);
             }
-            if (point2 < 21 && point1 >= 21 || point2 > point1 && point1 < 21 && point2 < 21)
+            if (point1 < 21 && point2 > 21 || point2 < point1 && point2 != 21)
             {
                 WiOnLooseInvoke(Convert.ToInt32(File.ReadLines(_path).ElementAtOrDefault(1)), bet);
             }

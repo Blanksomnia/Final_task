@@ -17,10 +17,18 @@ namespace Final_Task
         private int Max = 7;
         public void inGame(string path)
         {
+            bool result = true;
             int bat = new Exception().exeption();
-            if (bat == 0)
+            while (result)
             {
-                bat = new Exception().exeption();
+                if (bat == 0)
+                {
+                    bat = new Exception().exeption();
+                }
+                else
+                {
+                    result = false;
+                }
             }
             var readStream = File.ReadLines(path).ElementAtOrDefault(0);
             var bones = 2;
